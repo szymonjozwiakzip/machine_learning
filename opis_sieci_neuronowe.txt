@@ -1,0 +1,32 @@
+Link do datasetu: https://www.kaggle.com/datasets/efehandanisman/euroleague-play-by-play-data-20072020?resource=download
+
+Wybrany dataset zawiera play-by-play dane z rozgrywek Eurocup (2012-2020) i Euroleague (2007-2020). Ze względu na złożoność owego datasetu (zawiera on akcje play-by-play z dokładnie wskazanymi sekundami akcji w każdym meczu), skupiłem się tylko na danych z Eurocupu (również dlatego, że można w nich znaleźć sporo meczów polskich zespołów - Stelmet Zielona Góra, PGE Turów Zgorzelec, Trefl Sopot). To jedyny dataset poświęcony tej tematyce w taki sposób, jaki udało mi się znaleźć, co sprawiło, że był dla mnie ciekawy w kontekście analizy. 
+
+
+Trudności związane z datasetem:
+
+Format play-by-play: Dane zostały przedstawione w formacie play-by-play, co oznacza, że każda akcja meczu (np. zdobycie punktów, faule, przerwy) jest zapisana jako osobny wpis. Aby uzyskać wynik końcowy dla danego meczu, konieczne było przetwarzanie i filtrowanie danych.
+
+Konieczne było dodatkowe grupowanie danych po roku i identyfikatorze meczu (gamenumber) oraz wybieranie rekordów z maksymalną sumą punktów.
+
+Brak bezpośrednich etykiet: Wynik meczu (win/loss/draw) nie był podany w zbiorze danych. Został on wyznaczony na podstawie porównania końcowych punktów dla obu drużyn.
+
+Jakość danych: W zbiorze znalazły się wpisy z brakującymi wartościami, które wymagały filtracji.
+
+Celem analizy było zbudowanie modelu klasyfikacyjnego, który przewiduje wynik meczu dla drużyny TeamA (czyli gospodarzy). Wynik klasyfikowany jest do jednej z trzech kategorii:
+
+    Win (zwycięstwo): Drużyna A zdobyła więcej punktów niż drużyna B.
+    Loss (porażka): Drużyna A zdobyła mniej punktów niż drużyna B.  
+    Draw (remis): Obie drużyny zdobyły tę samą liczbę punktów.
+
+Wykorzystane cechy:
+
+Do predykcji wyniku wykorzystano następujące cechy:
+
+POINTS_A: Liczba punktów zdobytych przez drużynę A (TeamA).
+
+POINTS_B: Liczba punktów zdobytych przez drużynę B (TeamB).
+
+Obie cechy są kluczowe dla problemu klasyfikacji, ponieważ bezpośrednio określają wynik spotkania.
+
+
