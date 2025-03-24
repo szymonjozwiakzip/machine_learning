@@ -1,0 +1,2 @@
+ze wzgledu na zbyt duzy rozmiar pliku (nawet po kompresji), nie jestem w stanie umiescic vehicles.csv na moodle, dane natomiast pochodzą wprost z:
+https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data?resource=download
